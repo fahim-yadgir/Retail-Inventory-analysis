@@ -1,0 +1,16 @@
+﻿supplier_id,supplier_name,product_id,lead_time_days,min_order_qty,reliability_pct
+SUP01,AgroFresh Traders,P024,4,36,96
+SUP01,AgroFresh Traders,P025,2,100,96
+SUP10,SnackHub Pvt Ltd,P037,6,60,93
+SUP03,Metro Distributors,P041,7,60,88
+SUP06,Deccan FMCG,P054,8,100,85
+SUP06,Deccan FMCG,P057,9,36,85
+SUP05,Kaveri Wholesale,P066,10,12,78
+SUP12,Nova Personal Care,P074,7,48,89
+SUP05,Kaveri Wholesale,P076,8,48,78
+SUP09,HomeCare Supplies,P082,12,12,72
+SUP06,Deccan FMCG,P088,8,24,85
+SUP11,Konkan Provisions,P099,10,36,81
+SUP01,AgroFresh Traders,P100,2,100,96
+SUP08,ColdChain India,P112,7,100,90
+SUP08,ColdChain India,P116,6,100,90

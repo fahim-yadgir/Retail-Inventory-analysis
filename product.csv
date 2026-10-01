@@ -1,0 +1,16 @@
+﻿product_id,name,category,unit_cost,shelf_life_days
+P024,Lassi 200ml,Dairy,277.42,5
+P025,Cream 200ml,Dairy,241.46,5
+P037,Energy Drink 250ml,Beverages,37.31,180
+P041,Iced Tea 500ml,Beverages,106.24,180
+P054,Rusk 300g,Snacks,132.81,120
+P057,Chocolate Bar 40g,Snacks,87.89,120
+P066,Deodorant 150ml,Personal Care,242.95,730
+P074,Mouthwash 250ml,Personal Care,118.74,730
+P076,Detergent Powder 2kg,Household,99.05,900
+P082,Aluminium Foil,Household,150.15,900
+P088,Room Freshener,Household,162.3,900
+P099,Cucumber 500g,Fresh Produce,16.39,4
+P100,Capsicum 500g,Fresh Produce,76.52,4
+P112,Ice Cream Cone 4pk,Frozen,87.7,90
+P116,Kulfi 4pk,Frozen,269.26,90
