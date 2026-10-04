@@ -17,3 +17,13 @@ join product p on p.product_id = i.product_id
 group by p.`name`
 order by total_unit_received desc;
 
+select t.store_id , t.city , t.store_size , round(sum(unit_price),2)as total_unit_price
+from sales s
+inner join stores t on s.store_id = t.store_id
+group by t.store_id , t.city , t.store_size 
+order by total_unit_price desc;
+
+select p.product_id , p.`name` , p.category , p.unit_cost , s.unit_price ,s.discount ,round((s.unit_price - s.discount) - p.unit_cost ,2) as profit_after_discount
+from product p
+join sales s on p.product_id = s.product_id
+where s.unit_price > 0;
