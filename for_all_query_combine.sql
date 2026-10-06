@@ -39,3 +39,7 @@ from inventory
 where units_received = (select max(units_received)as max_units_received from inventory);
 
 select max(units_received)as max_units_received from inventory;
+
+select i.Dates , i.store_id , p.`name`,p.unit_cost ,round(sum(p.unit_cost) over(order by i.Dates ,p.`name`),2)as Runnig_unit_cost
+from inventory i
+left join product p on p.product_id = i.product_id;
