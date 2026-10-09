@@ -44,3 +44,19 @@ select i.Dates , i.store_id , p.`name`,p.unit_cost ,round(sum(p.unit_cost) over(
 from inventory i
 left join product p on p.product_id = i.product_id;
 
+select s.supplier_name , sum(p.unit_cost)as total_unit_cost
+from product p
+join suppliers s on p.product_id = s.product_id
+group by s.supplier_name;
+
+select 
+		i.Dates , 
+        s.city ,
+        round(sum(p.unit_cost),2)as total_cost
+from inventory i
+right join stores s on i.store_id = s.store_id
+join product p on i.product_id = p.product_id
+where i.Dates between '2025-09-01' and '2025-09-31'
+group by 
+		i.Dates , 
+        s.city ;

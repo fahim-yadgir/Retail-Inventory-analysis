@@ -15,6 +15,7 @@ group by store_id;
 
 select Dates , product_id , sum(units_received)as unit_recive
 from inventory
+where Dates between '2025-09-01' and '2025-09-31'
 group by Dates , product_id 
 order by unit_recive desc;
 
@@ -22,3 +23,5 @@ select store_id , max(units_received)as max_unit
 from inventory
 where store_id = 'S01'
 group by store_id;
+
+
