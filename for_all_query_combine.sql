@@ -60,3 +60,4 @@ where i.Dates between '2025-09-01' and '2025-09-31'
 group by 
 		i.Dates , 
         s.city ;
+        
