@@ -61,3 +61,8 @@ group by
 		i.Dates , 
         s.city ;
         
+select  p.`name` , s.supplier_name , round(sum(p.unit_cost * i.units_received),2)as total_cost
+from inventory i 
+join product p on p.product_id = i.product_id
+join suppliers s on p.product_id = s.product_id
+group by p.`name` , s.supplier_name ;
