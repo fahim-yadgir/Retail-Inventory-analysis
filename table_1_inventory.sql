@@ -24,4 +24,13 @@ from inventory
 where store_id = 'S01'
 group by store_id;
 
+select Dates ,store_id , product_id ,closing_stock,dense_rank() over(order by closing_stock desc)as top_rank
+from inventory
+where closing_stock != 0;
 
+select Dates ,store_id , product_id ,closing_stock,rank() over(order by closing_stock desc)as top_rank
+from inventory
+where closing_stock != 0;
+
+select  Dates, store_id , product_id , closing_stock,sum(closing_stock) over(partition by store_id order by Dates desc)as total_closing_stock_perday
+from inventory;
