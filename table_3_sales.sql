@@ -15,3 +15,16 @@ where unit_price < (select max(unit_price)from sales);
 
 select max(unit_price) highets
 from sales;
+
+select store_id , product_id , units_sold , unit_price , discount
+from sales
+where discount != 0;
+
+select store_id , product_id , units_sold , unit_price , discount
+from sales
+where unit_price > 400
+order by unit_price desc;
+
+select Dates,store_id , product_id , units_sold , unit_price , discount
+from sales
+where Dates between '2025-09-01' and '2025-09-31' and units_sold > 25;
