@@ -65,4 +65,18 @@ select  p.`name` , s.supplier_name , round(sum(p.unit_cost * i.units_received),2
 from inventory i 
 join product p on p.product_id = i.product_id
 join suppliers s on p.product_id = s.product_id
-group by p.`name` , s.supplier_name ;
+group by p.`name` , s.supplier_name;
+
+create view Profit as
+(
+select  p.category ,
+		p.unit_cost ,
+		s.units_sold ,
+        s.unit_price  , 
+        s.discount ,
+		 round((s.units_sold * s.unit_price * (1 - s.discount / 100))- (s.units_sold * p.unit_cost),2) as profit
+from product p
+inner join sales s on p.product_id = s.product_id
+);
+
+select * from Profit;
