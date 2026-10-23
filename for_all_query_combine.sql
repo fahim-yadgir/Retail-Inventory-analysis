@@ -80,3 +80,10 @@ inner join sales s on p.product_id = s.product_id
 );
 
 select * from Profit;
+
+select p.`name` , count(*)as total_product_sales , 
+round(sum((s.units_sold * s.unit_price * (1 - s.discount / 100))- (s.units_sold * p.unit_cost)),2) as profit
+from sales s
+join product p on s.product_id = p.product_id
+group by p.`name`
+limit 0 , 5000;
