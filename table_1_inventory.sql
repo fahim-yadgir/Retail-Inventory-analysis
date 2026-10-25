@@ -34,3 +34,17 @@ where closing_stock != 0;
 
 select  Dates, store_id , product_id , closing_stock,sum(closing_stock) over(partition by store_id order by Dates desc)as total_closing_stock_perday
 from inventory;
+
+select * from
+inventory
+order by store_id asc;
+
+drop view September_date;
+
+create view September_data as(
+select * from 
+inventory
+where Dates between '2025-09-01' and '2025-09-31'
+);
+
+select * from September_data;

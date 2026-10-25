@@ -25,3 +25,7 @@ order by total_unit_cost desc;
 
 select * from product
 where category = "Fresh Produce";
+
+select `name` , count(*)as total_product_count
+from product
+group by `name`;
