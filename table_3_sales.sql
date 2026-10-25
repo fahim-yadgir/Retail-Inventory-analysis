@@ -28,3 +28,4 @@ order by unit_price desc;
 select Dates,store_id , product_id , units_sold , unit_price , discount
 from sales
 where Dates between '2025-09-01' and '2025-09-31' and units_sold > 25;
+

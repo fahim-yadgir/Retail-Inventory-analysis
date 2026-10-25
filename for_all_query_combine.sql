@@ -87,3 +87,14 @@ from sales s
 join product p on s.product_id = p.product_id
 group by p.`name`
 limit 0 , 5000;
+
+select p.`name` , sum(s.units_sold)as total_unit_solds
+from product p
+join sales s on p.product_id = s.product_id
+group by p.`name`;
+
+
+select p.`name` , sum(s.discount)as total_discount
+from product p
+join sales s on p.product_id = s.product_id
+group by p.`name`;
