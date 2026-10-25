@@ -48,3 +48,12 @@ where Dates between '2025-09-01' and '2025-09-31'
 );
 
 select * from September_data;
+
+create view store_S01_data as 
+(
+select * from 
+inventory
+where store_id = 'S01'
+);
+
+select * from store_S01_data;
