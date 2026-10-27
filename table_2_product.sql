@@ -29,3 +29,24 @@ where category = "Fresh Produce";
 select `name` , count(*)as total_product_count
 from product
 group by `name`;
+
+drop procedure update_unit_cost;
+
+delimiter $$
+create procedure update_unit_cost 
+(
+in p_id text,
+in unit_costs double
+)
+begin
+update product
+set unit_cost = 
+				 unit_costs + unit_cost
+where product_id = p_id;
+select * from product;
+end $$
+
+delimiter ;
+
+start transaction;
+call update_unit_cost('P024',3.57);

@@ -55,5 +55,3 @@ select * from
 inventory
 where store_id = 'S01'
 );
-
-select * from store_S01_data;
