@@ -98,3 +98,9 @@ select p.`name` , sum(s.discount)as total_discount
 from product p
 join sales s on p.product_id = s.product_id
 group by p.`name`;
+
+select s.store_id , sum(p.unit_price)as sum_unit_price
+from inventory i
+join sales p on p.product_id = i.product_id
+join stores s on i.store_id = s.store_id
+group by s.store_id ; 
