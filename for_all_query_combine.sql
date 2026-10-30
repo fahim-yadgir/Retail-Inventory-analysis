@@ -104,3 +104,8 @@ from inventory i
 join sales p on p.product_id = i.product_id
 join stores s on i.store_id = s.store_id
 group by s.store_id ; 
+
+select st.store_id , st.city , s.product_id , s.unit_price
+from sales s
+join stores st on s.store_id = st.store_id
+where st.store_id = "S01";

@@ -20,3 +20,10 @@ select store_size ,region, count(region)as region_count
 from stores
 group by store_size,region;
 
+create view Store_id_S01 as
+(
+select * from stores
+where store_id = "S01"
+);
+
+select * from Store_id_S01;
