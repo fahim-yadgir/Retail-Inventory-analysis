@@ -55,3 +55,11 @@ select * from
 inventory
 where store_id = 'S01'
 );
+
+select product_id , closing_stock
+from
+(
+select product_id , closing_stock , dense_rank() over(order by closing_stock desc)as stock_rank
+from inventory
+)as ranks_table
+where stock_rank = 2;

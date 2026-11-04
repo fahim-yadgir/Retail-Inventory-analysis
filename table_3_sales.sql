@@ -36,3 +36,12 @@ where unit_price > 0;
 select store_id ,unit_price ,rank() over(order by unit_price)as ranks
 from sales
 where unit_price > 0;
+
+select store_id,unit_price
+from 
+(
+select store_id,unit_price,dense_rank() over(order by unit_price desc)as ranks
+from sales
+)as rank_table
+where ranks = 2;
+
