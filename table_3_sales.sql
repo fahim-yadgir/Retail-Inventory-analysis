@@ -29,3 +29,10 @@ select Dates,store_id , product_id , units_sold , unit_price , discount
 from sales
 where Dates between '2025-09-01' and '2025-09-31' and units_sold > 25;
 
+select store_id ,unit_price ,dense_rank() over(order by unit_price)as ranks
+from sales
+where unit_price > 0;
+
+select store_id ,unit_price ,rank() over(order by unit_price)as ranks
+from sales
+where unit_price > 0;

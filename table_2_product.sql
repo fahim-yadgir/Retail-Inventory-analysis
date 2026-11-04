@@ -50,3 +50,6 @@ delimiter ;
 
 start transaction;
 call update_unit_cost('P024',3.57);
+
+select `name`,unit_cost,dense_rank()over(order by unit_cost)as ranks
+from product;
