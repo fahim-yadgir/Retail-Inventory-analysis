@@ -45,3 +45,14 @@ from sales
 )as rank_table
 where ranks = 2;
 
+select store_id , unit_price
+from
+(
+select store_id , unit_price,dense_rank() over(partition by store_id order by unit_price desc)as store_rank_1
+from sales
+)as store_rank
+where store_rank_1 = 1;
+
+select store_id , max(unit_price)
+from sales
+group by store_id;
