@@ -109,3 +109,17 @@ select st.store_id , st.city , s.product_id , s.unit_price
 from sales s
 join stores st on s.store_id = st.store_id
 where st.store_id = "S01";
+
+
+select p.category , s.unit_price ,s.Dates, round(sum(s.unit_price) over(order by s.Dates),2)as runnig_salary
+from product p
+inner join sales s on p.product_id = s.product_id
+where p.category = "Dairy";
+
+select sub.category , sub.unit_price 
+from  
+(select p.category,s.unit_price,dense_rank() over(partition by p.category order by s.unit_price desc)as top_rank
+from product p
+inner join sales s on p.product_id = s.product_id
+)as sub
+where sub.top_rank =1;
