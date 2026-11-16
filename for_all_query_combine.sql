@@ -123,3 +123,11 @@ from product p
 inner join sales s on p.product_id = s.product_id
 )as sub
 where sub.top_rank =1;
+
+
+select sub.category ,  sub.total_sales
+from 
+(select p.category ,(s.units_sold * s.unit_price)as total_sales,dense_rank() over(partition by p.category order by (s.units_sold * s.unit_price) desc)as top_rank
+from product p
+inner join sales s on p.product_id = s.product_id) as sub
+where top_rank <= 3;
